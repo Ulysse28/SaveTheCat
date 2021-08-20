@@ -1,12 +1,10 @@
 """
 Class Walls
 """
-
 import pygame
 import random
 
 class Walls(pygame.sprite.Sprite):
-
     #Constructor
     def __init__(self):
         super().__init__()

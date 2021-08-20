@@ -1,11 +1,9 @@
 """
 classe enemy
 """
-
 import pygame
 import random
 from red import Red
-
 
 class Enemy(pygame.sprite.Sprite ):
     #constructor
@@ -28,7 +26,6 @@ class Enemy(pygame.sprite.Sprite ):
     def damage(self, amount):
         #infliger les dégats
         self.health -= amount
-
         #vérifier si son nouveau nombre de point de vie est inférieur ou égale à 0
         if self.health <= 0:
             #le faire réapparaitre
@@ -46,14 +43,11 @@ class Enemy(pygame.sprite.Sprite ):
     #Barre de vie
     def update_health_bar(self, screen):
         #couleur de la bar de vie
-
         bar_color = (111, 210, 46)
         back_bar_color = (60, 63, 60)
-
         bar_position = [self.rect.x - 10, self.rect.y - 5, self.health,5]
         back_bar_position =[self.rect.x - 10, self.rect.y - 5, self.max_health,5]
         #dessiner la barre de vie
-
         pygame.draw.rect(screen, back_bar_color, back_bar_position)
         pygame.draw.rect(screen, bar_color, bar_position)
 

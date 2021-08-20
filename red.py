@@ -2,12 +2,10 @@ import pygame
 import random
 
 class Red(pygame.sprite.Sprite):
-
     #Constructor
     def __init__(self , game, enemy):
         super().__init__()
         self.game = game
-
         self.enemy = enemy
         self.image = pygame.image.load('Assets/characters/circle.png')
         self.rect = self.image.get_rect()
@@ -20,13 +18,10 @@ class Red(pygame.sprite.Sprite):
         self.enemy.all_reds.remove(self)
         print("remove")
 
-
     #Faire bouger les ennemis
     def move(self):
-
         #si il y a collision avec un ennemi, le supprimer
         for player in self.game.chack_collisions(self, self.game.all_players):
-
             print('collisions')
             self.remove()
             #Infliger des dégats aux enemis
@@ -36,7 +31,6 @@ class Red(pygame.sprite.Sprite):
         #le faire monter
         self.rect.y += self.speed
         print(self.rect.y)
-
         #s'il sort de la fenêtre, le supprimer
         if self.rect.y < -50:
             self.remove()

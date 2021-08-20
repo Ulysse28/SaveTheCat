@@ -1,10 +1,8 @@
 """
 Class Cat
 """
-
 import pygame
 from player import Player
-
 
 class Cat(pygame.sprite.Sprite):
     def __init__(self, game):
@@ -19,10 +17,8 @@ class Cat(pygame.sprite.Sprite):
 
     def move(self):
         if abs(self.game.player.rect.x - self.rect.x) < 50:
-
             if self.game.player.rect.x < self.rect.x:
                 self.rect.x += self.speed * self.velocity[1]
-                print("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
             if self.game.player.rect.x > self.rect.x:
                 self.rect.x += self.speed * self.velocity[0]
             if self.game.player.rect.y < self.rect.y:
